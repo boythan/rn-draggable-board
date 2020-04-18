@@ -20,7 +20,7 @@ class Column extends React.Component {
     }
 
     reload() {
-        this.setState({ dataSource: this.dataSource() });
+        this.setState({dataSource: this.dataSource()});
     }
 
     rowHasChanged(item1, item2) {
@@ -28,7 +28,7 @@ class Column extends React.Component {
     }
 
     dataSourceWithItems(items) {
-        const ds = new ListView.DataSource({ rowHasChanged: this.rowHasChanged });
+        const ds = new ListView.DataSource({rowHasChanged: this.rowHasChanged});
         return ds.cloneWithRows(items);
     }
 
@@ -67,7 +67,7 @@ class Column extends React.Component {
         this.props.rowRepository.updateColumnWithLayout(this.props.column.id());
     }
 
-    renderWrapperRow({ item }) {
+    renderWrapperRow({item}) {
         let props = {
             onPressIn: this.onPressIn(item),
             onPress: this.onPress(item),
@@ -131,11 +131,11 @@ class Column extends React.Component {
     render() {
         return (
             <View
-                style={{ flex: 1, backgroundColor: 'red' }}
+                style={{flex: 1, }}
                 ref={this.setColumnRef.bind(this)}
                 onLayout={this.updateColumnWithLayout.bind(this)}>
                 <FlatList
-                    style={{ height: '100%', backgroundColor: 'red', width: '100%' }}
+                    style = {{height: '100%', width: '100%'}}
                     data={this.dataSource()}
                     dataSource={this.dataSource()}
                     ref={this.setListView.bind(this)}
