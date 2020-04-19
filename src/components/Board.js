@@ -235,7 +235,7 @@ class Board extends React.Component {
     const { draggedItem, movingMode } = this.state;
     // Without this when you drop a task it's impossible to drag it again...
     // And -1 is really needed for Android
-    const zIndex = movingMode ? 1 : -1;
+    const zIndex = movingMode ? 1000 : -1;
     const data = { item: draggedItem, hidden: !movingMode, style: this.movingStyle(zIndex) };
     return this.renderWrapperRow(data);
   }
